@@ -81,7 +81,12 @@
                 result = num1 * num2;
                 break;
             case 'divide':
+                if (num2 === 0) {
+                    errorElement.textContent = "Ошибка: Деление на ноль!";
+                    result = '∞';
+                } else {
                     result = num1 / num2;
+                }
                 break;
             default:
                 result = 'Ошибка';
