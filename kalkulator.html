@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Калькулятор</h1>
@@ -11,39 +12,56 @@
 <!-- Форма для ввода чисел -->
 <form id="calculatorForm">
     <label for="num1">Число 1:</label>
-    <input type="number" id="num1" required><br><br>
+    <input type="number" id="num1" required>
 
     <label for="num2">Число 2:</label>
-    <input type="number" id="num2" required><br><br>
+    <input type="number" id="num2" required>
 
-    <!-- Кнопка для выполнения операции -->
-    <button type="submit">Посчитать</button>
+    <!-- Кнопки для операций -->
+    <button type="button" onclick="calculate('+')">Сложение</button>
+    <button type="button" onclick="calculate('-')">Вычитание</button>
+    <button type="button" onclick="calculate('*')">Умножение</button>
+    <button type="button" onclick="calculate('/')">Деление</button>
 </form>
 
 <!-- Место для вывода результата -->
-<h2>Результат: <span id="result"></span></h2>
+<h2>Результат: <span id="result">0</span></h2>
 
 <script>
-    // 1. Получаем элементы формы
-    const form = document.getElementById('calculatorForm');
-    const num1Input = document.getElementById('num1');
-    const num2Input = document.getElementById('num2');
-    const resultElement = document.getElementById('result');
+    // Функция для вычислений
+    function calculate(operation) {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        const resultElement = document.getElementById('result');
 
-    // 2. Обработчик события для формы
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Отменяем стандартное поведение формы
+        // Проверка на пустые значения
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Должно быть два числа!!!");
+            return;
+        }
 
-        // 3. Получаем значения из полей ввода
-        const num1 = parseFloat(num1Input.value);
-        const num2 = parseFloat(num2Input.value);
+        let result;
+        // Выбор операции
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            default:
+                result = "Ошибка";
+        }
 
-        // 4. Вычисляем сумму
-        const sum = num1 + num2;
-
-        // 5. Отображаем результат
-        resultElement.textContent = sum;
-    });
+        // Отображение результата
+        resultElement.textContent = result;
+    }
 </script>
 </body>
 </html>
