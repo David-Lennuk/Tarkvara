@@ -61,7 +61,11 @@
         const num1 = parseFloat(num1Input.value);
         const num2 = parseFloat(num2Input.value);
 
-
+        if (isNaN(num1) || isNaN(num2)) {
+            errorElement.textContent = "Ошибка: Введите правильные числа!";
+            resultElement.textContent = '0';
+            return;
+        }
         errorElement.textContent = ""; // очищаем сообщение об ошибке
 
         let result;
