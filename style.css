@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    text-align: center;
+    padding: 50px;
+}
+h1 {
+    color: #333;
+}
+form {
+    display: inline-block;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+}
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background: #F19CBB;
+    color: #333;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+    margin: 4px 0;
+}
+
+h2 {
+    color: #444;
+}
+#result {
+    font-weight: bold;
+    color: #000;
+}
