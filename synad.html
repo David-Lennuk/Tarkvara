@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+</head>
+<body>
+<h1>Калькулятор</h1>
+
+<!-- Форма для ввода чисел -->
+<form id="calculatorForm">
+    <label for="num1">Число 1:</label>
+    <input type="number" id="num1" required><br><br>
+
+    <label for="num2">Число 2:</label>
+    <input type="number" id="num2" required><br><br>
+
+    <!-- Кнопка для выполнения операции -->
+    <button type="submit">Посчитать</button>
+</form>
+
+<!-- Место для вывода результата -->
+<h2>Результат: <span id="result"></span></h2>
+
+<script>
+    // 1. Получаем элементы формы
+    const form = document.getElementById('calculatorForm');
+    const num1Input = document.getElementById('num1');
+    const num2Input = document.getElementById('num2');
+    const resultElement = document.getElementById('result');
+
+    // 2. Обработчик события для формы
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Отменяем стандартное поведение формы
+
+        // 3. Получаем значения из полей ввода
+        const num1 = parseFloat(num1Input.value);
+        const num2 = parseFloat(num2Input.value);
+
+        // 4. Вычисляем сумму
+        const sum = num1 + num2;
+
+        // 5. Отображаем результат
+        resultElement.textContent = sum;
+    });
+</script>
+</body>
+</html>
