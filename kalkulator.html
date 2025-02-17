@@ -25,6 +25,7 @@
         <button id="subtractBtn">Вычитание</button>
         <button id="multiplyBtn">Умножение</button>
         <button id="divideBtn">Деление</button>
+        <button id="powerBtn">Степень</button>
     </div>
 
     <div class="result">
@@ -57,6 +58,10 @@
         calculate('divide');
     });
 
+    document.getElementById('powerBtn').addEventListener('click', function() {
+        calculate('power');
+    });
+
     function calculate(operation) {
         const num1 = parseFloat(num1Input.value);
         const num2 = parseFloat(num2Input.value);
@@ -66,7 +71,7 @@
             resultElement.textContent = '0';
             return;
         }
-        errorElement.textContent = ""; // очищаем сообщение об ошибке
+        errorElement.textContent = "";
 
         let result;
 
@@ -87,6 +92,9 @@
                 } else {
                     result = num1 / num2;
                 }
+                break;
+            case 'power': // Новая операция
+                result = Math.pow(num1, num2);
                 break;
             default:
                 result = 'Ошибка';
