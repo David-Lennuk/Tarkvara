@@ -1,49 +1,92 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #a6c1ee, #c2e9fb);
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f9;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 h1 {
     text-align: center;
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .container {
-    width: 300px;
-    margin: 0 auto;
+    width: 350px;
+    padding: 30px;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
 }
 
 input, button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+input:focus, button:focus {
+    border-color: #6a8dff;
+    outline: none;
+}
+
+input {
+    font-size: 18px;
 }
 
 button {
-    background-color: #ffc3e3;
+    background-color: #6a8dff;
     color: white;
-    border: none;
+    font-weight: bold;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #d290cc;
+    background-color: #5b7fd8;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.operations {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.operations button {
+    width: 48%;
+    background-color: #ff8c8c;
+}
+
+.operations button:hover {
+    background-color: #f76666;
 }
 
 .result {
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 24px;
     font-weight: bold;
+    color: #333;
 }
 
 .error {
-    color: red;
+    color: #e74c3c;
     font-size: 16px;
+    margin-top: 10px;
 }
