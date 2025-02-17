@@ -22,6 +22,7 @@
     <button type="button" onclick="calculate('-')">Вычитание</button>
     <button type="button" onclick="calculate('*')">Умножение</button>
     <button type="button" onclick="calculate('/')">Деление</button>
+    <button type="button" onclick="calculate('%')">Остаток от деления</button> <!-- Новая кнопка -->
 </form>
 
 <!-- Место для вывода результата -->
@@ -54,6 +55,9 @@
                 break;
             case '/':
                 result = num1 / num2;
+                break;
+            case '%': // Новая операция остатка от деления
+                result = num1 % num2;
                 break;
             default:
                 result = "Ошибка";

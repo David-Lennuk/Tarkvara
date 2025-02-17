@@ -1,40 +1,82 @@
+/* Основной стиль для страницы */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    text-align: center;
-    padding: 50px;
-}
-h1 {
-    color: #333;
-}
-form {
-    display: inline-block;
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    width: 220px;
-}
-input[type="number"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-button {
-    background: #F19CBB;
-    color: #333;
-    border: none;
-    padding: 8px;
-    border-radius: 4px;
-    width: 100%;
-    margin: 4px 0;
+    background-color: #e8e6f3; /* Пастельный фиолетовый фон */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-h2 {
-    color: #444;
+/* Заголовок калькулятора */
+h1 {
+    color: #6a4c9c; /* Темно-фиолетовый цвет */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
+
+/* Форма калькулятора */
+form {
+    background-color: #f6f1fc; /* Светло-фиолетовый фон для формы */
+    padding: 30px;
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Метки и поля ввода */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #6a4c9c; /* Темно-фиолетовый для текста */
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d1b3e2; /* Легкая фиолетовая рамка */
+    border-radius: 8px;
+    background-color: #f9f6fb; /* Очень светлый фиолетовый фон для полей */
+    font-size: 16px;
+    color: #6a4c9c;
+    box-sizing: border-box;
+}
+
+/* Кнопки */
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    background-color: #a68ecf; /* Мягкий фиолетовый для кнопок */
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9b86d8; /* Немного темнее при наведении */
+}
+
+/* Результат */
+h2 {
+    text-align: center;
+    color: #6a4c9c;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
 #result {
+    font-size: 24px;
     font-weight: bold;
-    color: #000;
+    color: #a68ecf; /* Цвет результата */
 }
